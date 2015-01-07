@@ -1,0 +1,24 @@
+{
+	"curly": false,
+	"eqeqeq": false,
+	"immed": true,
+	"latedef": false,
+	"newcap": false,
+	"noarg": false,
+	"sub": true,
+	"undef": true,
+	"unused": true,
+	"boss": true,
+	"eqnull": true,
+	"expr": true,
+	"trailing": true,
+	"maxcomplexity": 7,
+	"indent": 4,
+	"white": false,
+	"node": true,
+    "esnext": true,
+    "globals": {
+        "describe": true,
+        "it": true
+    }
+}

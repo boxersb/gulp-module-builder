@@ -1,0 +1,7 @@
+{
+    "digest": [
+        "/markdown/README.md",
+        "/markdown/*.md",
+        "noexistfile"
+    ]
+}

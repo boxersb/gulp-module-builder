@@ -1,0 +1,1 @@
+serviceNS.map = function() { }

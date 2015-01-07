@@ -1,0 +1,12 @@
+{
+    "baselib": [
+        "lib1.js",
+        "lib2.js",
+        "lib3.js"
+    ],
+
+    "service": [
+        "service1.js",
+        "service2.js"
+    ]
+}
