@@ -5,14 +5,12 @@
 You can write module list file as modules `manifesto` and build by gulp.
 
 ## Install
-----
 
 ```bash
 npm install gulp-module-builder --save-dev
 ```
 
 ## Usage
-----
 
 ### Manifesto
 
@@ -49,7 +47,7 @@ gulp.task('build', function() {
 
 
 ## Options
-----
+
 [gulp-module-builder] takes some options below.
 
 ### cwd
@@ -83,7 +81,7 @@ When you pass `R` to this option, plugin will merge from rear position.
 
 
 ## LICENSE
-----
+
 Copyright (c) 2014 boxersb <boxersb@gmail.com>
 
 Permission is hereby granted, free of charge, to any person

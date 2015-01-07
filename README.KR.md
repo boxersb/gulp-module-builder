@@ -5,14 +5,12 @@
 파일의 목록을 별도의 선언문(`manifesto`)으로 기술해두고, 해당 선언문을 바탕으로 모듈을 빌드하는 gulp 플러그인이다.
 
 ## Install
-----
 
 ```bash
 npm install gulp-module-builder --save-dev
 ```
 
 ## Usage
-----
 
 ### 선언문(`manifesto`)
 
@@ -48,7 +46,7 @@ gulp.task('build', function() {
   
   
 ## Options
-----
+
 [gulp-module-builder]에서는 아래와 같은 옵션을 사용한다.
 
 ### cwd
@@ -83,7 +81,7 @@ gulp.task('build', function() {
   
   
 ## LICENSE
-----
+
 Copyright (c) 2014 boxersb <boxersb@gmail.com>
 
 Permission is hereby granted, free of charge, to any person
