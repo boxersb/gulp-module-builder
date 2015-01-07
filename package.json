@@ -1,6 +1,6 @@
 {
   "name": "gulp-module-builder",
-  "description": "Concatenate files with module list json",
+  "description": "Concatenate files in manifesto",
   "version": "0.1.0",
   "homepage": "https://github.com/boxersb/gulp-module-builder",
   "author": "boxersb <boxersb@gmail.com> (http://boxersb.github.io)",

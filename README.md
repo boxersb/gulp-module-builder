@@ -1,102 +1,89 @@
+[gulp-module-builder]:https://github.com/boxersb/gulp-module-builder.git
+
 # gulp-module-builder
 
-> 머지가 필요한 파일들의 목록을 json으로 기술하여 빌드를 수행한다.
+You can write module list file as modules `manifesto` and build by gulp.
 
-[gulp-module-builder]: http://gitlab.map.naver.com/mantle/gulp-module-builder.git
-
-## Getting Started
-gulp-module-builder 는 gulp 플러그인이다.
-public npm registry에는 등록하지 않았으므로, package.json의 dependencies 절에는 [gulp-module-builder]의 gitlab [URI][gulp-module-builder]를 사용해야한다.
-
-**package.json**
-
-```js
-	"devDependencies" : {
-		"gulp-module-builder" : "git+http://gitlab.map.naver.com/mantle/gulp-module-builder.git#master"
-	}
-```
-
-gulp-module-builder를 사용할때는 특정 json 파일에 모듈명과 모듈 구성 목록을 기술해야한다.
-해당 json 파일은 JSON5 모듈을 사용하므로, JSON이 아닌 일반 js파일처럼 주석도 사용할 수 있다.
-
-**modules.json**
-
-```js
-	{
-		module1 : [
-			"src/file1.js",
-			"src/file2.js"
-		],
-
-		module2 : [
-			"src/file3.js",
-			"src/file4.js"
-		],
-
-		module3: [
-			"src/module3/**/*.js"
-		]
-	}
-```
-
-먼저, gulpfile.js에 task를 로드해야한다.
-
-```js
-	var builder = require('gulp-module-builder');
-```
-
-그리고, gulp-module-builder task를 작성한다.
-
-```js
-    gulp.task('merge', function() {
-        return gulp.src('test/fixtures/modules1.json')
-                    .pipe(builder({
-                        suffix: '-optioned',
-                        ext: 'ts',
-                        separator: '\n;\n'
-                    }))
-                    .pipe('./build');
-    });
-```
-
+## Install
 ----
+
+```bash
+npm install gulp-module-builder --save-dev
+```
+
+## Usage
+----
+
+### Manifesto
+
+[gulp-module-builder] requires specific `manifesto`.
+The manifesto follows `json` format and composit by `key-value(array)` pair.
+`key` means name of module and `value` means file list as array for member of module.
+You can write globbing pattern such as `*` or `**/*` in module list. So, plugin ignores no exist file in manifesto. By default, plugin not allows duplicate in file list.
+
+***Manifesto example (`modules.json`)***:
+```js
+{
+    "simple-module": [
+        "./src/foo.js",
+        "./src/bar.js",
+        "./src/common/namespace.js",
+        "./src/common/*.js",
+        "./src/service/**/*.js"
+    ]
+}
+```
+
+### Write task
+
+```js
+var builder = require('gulp-module-builder');
+
+gulp.task('build', function() {
+    gulp.src('./modules.json')
+        .pipe(builder())
+        .pipe(gulp.dest('./dist/')); // ./dist/simple-module.js file created.
+});
+```
+
+
 
 ## Options
-#### separator
-각 파일 사이의 구분자를 설정한다. 기본값은 ``os.EOL`` 이다.
-
-#### ext
-머지된 파일에 사용할 확장명이며, 기본값은 ``js`` 이다.
-
-#### suffix
-빌드된 모듈의 모듈명 뒤에 붙을 Suffix이며, 기본값은 없다.
-
-#### cwd
-모듈 목록파일에 기술된 파일의 위치를 cwd를 기준으로 해석한다.
-기본값은 프로젝트의 root 디렉토리이다.
-
-```js
-	options: {
-		cwd: './src'
-	}
-
-	// ./src 파일을 root로 인식하여 목록파일을 해석한다.
-```
-
-#### unique
-하나의 모듈이 될 파일 목록들의 중복을 허용하지 않을지를 결정한다.
-기본값은 true이다.
-값을 'R'로 지정하면 중복된 파일중 뒤에 온 항목을 우선으로 머지한다.
-
 ----
+[gulp-module-builder] takes some options below.
 
-## Release History
-* 2014-11-10 v1.0.0
-	* iron-modules-concat 에서 포팅
+### cwd
+Plugin will parse file path in manifesto relative this `cwd`.
+Default value is directory where you performed gulp task.
 
-----
+### encoding
+File encoding to read. Default is ``utf8``.
+
+### ext
+Extension of built module. Default is ``js``.
+
+### matches
+You can assign module name list to build in manifesto.
+For instance, you assigned like matches options to `['mymodule']`, plugin will build `mymodule` only. Default is `['*']` and build all modules in manifesto.
+
+### prefix
+Prefix of module name.
+
+### separator
+Separator between files. Default is `End Of Line` of your OS. (``require('os').EOL``)
+
+### suffix
+Suffix of module name.
+
+### unique
+You can specify whether plugin allow duplicate file contents in manifesto.
+Default is `true`.
+When you pass `R` to this option, plugin will merge from rear position.
+
+
 
 ## LICENSE
+----
 Copyright (c) 2014 boxersb <boxersb@gmail.com>
 
 Permission is hereby granted, free of charge, to any person
