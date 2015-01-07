@@ -1,11 +1,16 @@
 {
   "name": "gulp-module-builder",
   "description": "Concatenate files in manifesto",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/boxersb/gulp-module-builder",
   "author": "boxersb <boxersb@gmail.com> (http://boxersb.github.io)",
-  "repository": "git@github.com:boxersb/gulp-module-builder.git",
-  "bugs": "https://github.com/boxersb/gulp-module-builder/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:boxersb/gulp-module-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/boxersb/gulp-module-builder/issues"
+  },
   "licenses": [
     {
       "type": "MIT",
@@ -42,5 +47,9 @@
   "keywords": [
     "gulpplugin",
     "concat"
-  ]
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT"
 }
