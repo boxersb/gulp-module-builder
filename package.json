@@ -6,7 +6,7 @@
   "author": "boxersb <boxersb@gmail.com> (http://boxersb.github.io)",
   "repository": {
     "type": "git",
-    "url": "git@github.com:boxersb/gulp-module-builder.git"
+    "url": "https://github.com/boxersb/gulp-module-builder.git"
   },
   "bugs": {
     "url": "https://github.com/boxersb/gulp-module-builder/issues"
@@ -50,6 +50,5 @@
   ],
   "directories": {
     "test": "test"
-  },
-  "license": "MIT"
+  }
 }
