@@ -1,6 +1,6 @@
 [gulp-module-builder]:https://github.com/boxersb/gulp-module-builder.git
 
-**[한국어로 보기](korean)**
+**[한국어로 보기](#korean)**
 <a name="english"></a>
 # gulp-module-builder
 
@@ -113,7 +113,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 <a name="korean"></a>
 ## Korean
-**[for english](english)**
+**[for english](#english)**
 
 # gulp-module-builder
 
