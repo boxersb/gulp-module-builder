@@ -1,7 +1,7 @@
 {
   "name": "gulp-module-builder",
   "description": "Concatenate files in manifesto",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/boxersb/gulp-module-builder",
   "author": "boxersb <boxersb@gmail.com> (http://boxersb.github.io)",
   "repository": {
