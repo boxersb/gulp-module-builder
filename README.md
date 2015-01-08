@@ -4,6 +4,7 @@
 <a name="english"></a>
 # gulp-module-builder
 
+[![Build Status](https://api.travis-ci.org/boxersb/gulp-module-builder.png?branch=master)](https://travis-ci.org/boxersb/gulp-module-builder)
 
 You can write module list file as modules `manifesto` and build by gulp.
 
